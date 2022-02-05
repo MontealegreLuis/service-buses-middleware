@@ -3,7 +3,7 @@ package com.montealegreluis.servicebusesmiddleware.commandbus;
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.commandbus.MiddlewareCommandBus;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
-import com.montealegreluis.servicebusesmiddleware.fakes.commandbus.FakeCommandMiddleware;
+import com.montealegreluis.servicebusesmiddleware.fakes.commandbus.middleware.FakeCommandMiddleware;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;

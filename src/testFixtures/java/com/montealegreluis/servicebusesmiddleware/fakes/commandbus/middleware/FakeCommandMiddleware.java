@@ -1,4 +1,4 @@
-package com.montealegreluis.servicebusesmiddleware.fakes.commandbus;
+package com.montealegreluis.servicebusesmiddleware.fakes.commandbus.middleware;
 
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.commandbus.Command;
