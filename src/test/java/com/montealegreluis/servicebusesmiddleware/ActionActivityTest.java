@@ -35,7 +35,7 @@ final class ActionActivityTest {
     var action = Action.withoutSuffix("SearchProductsAction", "Action");
     var duration = Duration.ofMillis(500);
 
-    var activity = com.montealegreluis.servicebuses.ActionActivity.queryCompleted(action, duration);
+    var activity = ActionActivity.queryCompleted(action, duration);
 
     assertEquals("Search products has been completed in 500 milliseconds", activity.message());
     assertEquals(Level.INFO, activity.level());

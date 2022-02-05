@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.montealegreluis.servicebuses.ActionException;
-import com.montealegreluis.servicebuses.commandbus.MiddlewareCommandBus;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
 import com.montealegreluis.servicebusesmiddleware.fakes.commandbus.middleware.FakeCommandMiddleware;
 import java.util.Collections;

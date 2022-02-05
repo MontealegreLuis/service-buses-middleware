@@ -3,7 +3,7 @@ package com.montealegreluis.servicebusesmiddleware.fakes.commandbus.middleware;
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.commandbus.Command;
 import com.montealegreluis.servicebuses.commandbus.CommandHandler;
-import com.montealegreluis.servicebuses.commandbus.middleware.CommandMiddleware;
+import com.montealegreluis.servicebusesmiddleware.commandbus.middleware.CommandMiddleware;
 
 public final class FakeCommandMiddleware implements CommandMiddleware {
   private boolean executed = false;

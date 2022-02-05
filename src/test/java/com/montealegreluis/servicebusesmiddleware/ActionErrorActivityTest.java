@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.montealegreluis.activityfeed.ContextSerializer;
-import com.montealegreluis.servicebuses.ActionErrorActivity;
 import com.montealegreluis.servicebuses.DomainException;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
 import com.montealegreluis.servicebuses.fakes.querybus.FakeQuery;
@@ -18,7 +17,7 @@ final class ActionErrorActivityTest {
   @Test
   void it_creates_a_domain_exception_activity() {
     var activity =
-        com.montealegreluis.servicebuses.ActionErrorActivity.domainException(
+        ActionErrorActivity.domainException(
             new FakeCommand(), new DomainException("Action cannot be completed") {}, serializer);
 
     assertEquals("Cannot fake command. Action cannot be completed", activity.message());
