@@ -5,6 +5,7 @@ import com.montealegreluis.activityfeed.ContextSerializer;
 import com.montealegreluis.servicebuses.ActionErrorActivity;
 import com.montealegreluis.servicebuses.DomainException;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
+import com.montealegreluis.servicebuses.fakes.querybus.FakeQuery;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,12 +31,26 @@ final class ActionErrorActivityTest {
   }
 
   @Test
-  void it_creates_an_infrastructure_exception_activity() {
+  void it_creates_a_command_infrastructure_exception_activity() {
     var activity =
         ActionErrorActivity.commandFailure(
             new FakeCommand(), new RuntimeException("Action cannot be completed") {}, serializer);
 
     assertEquals("Cannot fake command. Action cannot be completed", activity.message());
+    assertEquals(Level.SEVERE, activity.level());
+    @SuppressWarnings("unchecked")
+    Map<String, Object> context = (Map<String, Object>) (activity.context().get("context"));
+    assertContextHasKey("input", context);
+    assertContextHasKey("exception", context);
+  }
+
+  @Test
+  void it_creates_a_query_infrastructure_exception_activity() {
+    var activity =
+        ActionErrorActivity.queryFailure(
+            new FakeQuery(), new RuntimeException("Action cannot be completed") {}, serializer);
+
+    assertEquals("Cannot fake query. Action cannot be completed", activity.message());
     assertEquals(Level.SEVERE, activity.level());
     @SuppressWarnings("unchecked")
     Map<String, Object> context = (Map<String, Object>) (activity.context().get("context"));

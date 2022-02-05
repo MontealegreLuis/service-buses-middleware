@@ -34,6 +34,11 @@ public final class ActionErrorActivity {
     return createActivity(input, exception, serializer, "command");
   }
 
+  public static Activity queryFailure(
+      Input input, Throwable exception, ContextSerializer serializer) {
+    return createActivity(input, exception, serializer, "query");
+  }
+
   private static Activity createActivity(
       Input input, Throwable exception, ContextSerializer serializer, String actionType) {
     Action action = input.action();
