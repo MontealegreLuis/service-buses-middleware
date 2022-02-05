@@ -1,5 +1,8 @@
 package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.handler;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.commandbus.factory.InMemoryCommandHandlerFactory;
 import com.montealegreluis.servicebuses.commandbus.locator.ReflectionsCommandHandlerLocator;
@@ -10,9 +13,6 @@ import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommandHandler;
 import com.montealegreluis.servicebuses.fakes.commandbus.SpyCommandHandler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 final class CommandHandlerMiddlewareTest {
   @Test

@@ -1,15 +1,14 @@
 package com.montealegreluis.servicebusesmiddleware;
 
-import com.montealegreluis.servicebuses.Action;
-import org.junit.jupiter.api.Test;
-
-import java.time.Duration;
-import java.util.Map;
-import java.util.logging.Level;
-
 import static com.montealegreluis.activityfeed.ContextAssertions.assertContextSize;
 import static com.montealegreluis.activityfeed.ContextAssertions.assertContextValueEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.montealegreluis.servicebuses.Action;
+import java.time.Duration;
+import java.util.Map;
+import java.util.logging.Level;
+import org.junit.jupiter.api.Test;
 
 final class ActionActivityTest {
   @Test

@@ -7,7 +7,6 @@ import com.montealegreluis.servicebuses.querybus.QueryBus;
 import com.montealegreluis.servicebuses.querybus.QueryHandler;
 import com.montealegreluis.servicebuses.querybus.Response;
 import com.montealegreluis.servicebusesmiddleware.querybus.middleware.QueryMiddleware;
-
 import java.util.ArrayList;
 import java.util.List;
 

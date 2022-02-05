@@ -6,7 +6,6 @@ import com.montealegreluis.servicebuses.commandbus.Command;
 import com.montealegreluis.servicebuses.commandbus.CommandBus;
 import com.montealegreluis.servicebuses.commandbus.CommandHandler;
 import com.montealegreluis.servicebusesmiddleware.commandbus.middleware.CommandMiddleware;
-
 import java.util.ArrayList;
 import java.util.List;
 

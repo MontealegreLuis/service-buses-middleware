@@ -1,5 +1,8 @@
 package com.montealegreluis.servicebusesmiddleware.querybus.middleware.handler;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.fakes.querybus.*;
 import com.montealegreluis.servicebuses.querybus.factory.InMemoryQueryHandlerFactory;
@@ -7,9 +10,6 @@ import com.montealegreluis.servicebuses.querybus.locator.ReflectionsQueryHandler
 import com.montealegreluis.servicebuses.querybus.locator.UnknownQueryHandler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 final class QueryHandlerMiddlewareTest {
   @Test

@@ -1,5 +1,11 @@
 package com.montealegreluis.servicebusesmiddleware.querybus.middleware.error;
 
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.queryFailure;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.*;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.activityfeed.ContextSerializer;
@@ -12,12 +18,6 @@ import com.montealegreluis.servicebuses.querybus.QueryHandler;
 import com.montealegreluis.servicebuses.querybus.Response;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
-import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.queryFailure;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
 
 final class QueryErrorHandlerMiddlewareTest {
   @Test

@@ -1,5 +1,8 @@
 package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.error;
 
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.commandFailure;
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
+
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.activityfeed.ContextSerializer;
 import com.montealegreluis.servicebuses.Action;
@@ -9,9 +12,6 @@ import com.montealegreluis.servicebuses.commandbus.Command;
 import com.montealegreluis.servicebuses.commandbus.CommandHandler;
 import com.montealegreluis.servicebusesmiddleware.commandbus.middleware.CommandMiddleware;
 import io.vavr.control.Try;
-
-import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.commandFailure;
-import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
 
 public final class CommandErrorHandlerMiddleware implements CommandMiddleware {
   private final ActivityFeed feed;

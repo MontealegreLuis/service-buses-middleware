@@ -1,17 +1,16 @@
 package com.montealegreluis.servicebusesmiddleware.querybus;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.montealegreluis.assertions.IllegalArgumentException;
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.fakes.querybus.FakeQuery;
 import com.montealegreluis.servicebuses.fakes.querybus.FakeResponse;
 import com.montealegreluis.servicebusesmiddleware.fakes.querybus.middleware.FakeCallNextQueryMiddleware;
 import com.montealegreluis.servicebusesmiddleware.fakes.querybus.middleware.FakeQueryMiddleware;
-import org.junit.jupiter.api.Test;
-
 import java.util.Collections;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 final class MiddlewareQueryBusTest {
   @Test

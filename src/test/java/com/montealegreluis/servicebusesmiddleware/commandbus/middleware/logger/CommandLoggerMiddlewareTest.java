@@ -1,20 +1,19 @@
 package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.logger;
 
+import static com.montealegreluis.servicebusesmiddleware.ActionActivity.commandCompleted;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
+
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
 import com.montealegreluis.servicebuses.fakes.commandbus.SpyCommandHandler;
 import com.montealegreluis.servicebusesmiddleware.fakes.commandbus.middleware.logger.FixedOffsetInstantClock;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneOffset;
-
-import static com.montealegreluis.servicebusesmiddleware.ActionActivity.commandCompleted;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 final class CommandLoggerMiddlewareTest {
   @Test

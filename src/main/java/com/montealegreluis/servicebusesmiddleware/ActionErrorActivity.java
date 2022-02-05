@@ -1,5 +1,9 @@
 package com.montealegreluis.servicebusesmiddleware;
 
+import static com.montealegreluis.activityfeed.Activity.error;
+import static com.montealegreluis.activityfeed.Activity.warning;
+import static com.montealegreluis.activityfeed.ExceptionContextFactory.contextFrom;
+
 import com.montealegreluis.activityfeed.Activity;
 import com.montealegreluis.activityfeed.ContextSerializer;
 import com.montealegreluis.servicebuses.Action;
@@ -7,10 +11,6 @@ import com.montealegreluis.servicebuses.DomainException;
 import com.montealegreluis.servicebuses.Input;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-
-import static com.montealegreluis.activityfeed.Activity.error;
-import static com.montealegreluis.activityfeed.Activity.warning;
-import static com.montealegreluis.activityfeed.ExceptionContextFactory.contextFrom;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ActionErrorActivity {

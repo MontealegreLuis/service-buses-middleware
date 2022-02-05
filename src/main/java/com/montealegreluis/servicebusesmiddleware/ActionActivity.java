@@ -1,13 +1,12 @@
 package com.montealegreluis.servicebusesmiddleware;
 
+import static com.montealegreluis.activityfeed.Activity.info;
+
 import com.montealegreluis.activityfeed.Activity;
 import com.montealegreluis.servicebuses.Action;
+import java.time.Duration;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-
-import java.time.Duration;
-
-import static com.montealegreluis.activityfeed.Activity.info;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ActionActivity {

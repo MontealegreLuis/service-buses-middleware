@@ -1,19 +1,18 @@
 package com.montealegreluis.servicebusesmiddleware;
 
+import static com.montealegreluis.activityfeed.ContextAssertions.assertContextHasKey;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.montealegreluis.activityfeed.ContextSerializer;
 import com.montealegreluis.servicebuses.ActionErrorActivity;
 import com.montealegreluis.servicebuses.DomainException;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
 import com.montealegreluis.servicebuses.fakes.querybus.FakeQuery;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.util.Map;
 import java.util.logging.Level;
-
-import static com.montealegreluis.activityfeed.ContextAssertions.assertContextHasKey;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 final class ActionErrorActivityTest {
   @Test

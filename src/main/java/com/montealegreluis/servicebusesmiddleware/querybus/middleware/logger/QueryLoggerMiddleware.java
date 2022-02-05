@@ -1,17 +1,16 @@
 package com.montealegreluis.servicebusesmiddleware.querybus.middleware.logger;
 
+import static com.montealegreluis.servicebusesmiddleware.ActionActivity.queryCompleted;
+
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.querybus.Query;
 import com.montealegreluis.servicebuses.querybus.QueryHandler;
 import com.montealegreluis.servicebuses.querybus.Response;
 import com.montealegreluis.servicebusesmiddleware.querybus.middleware.QueryMiddleware;
-
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
-
-import static com.montealegreluis.servicebusesmiddleware.ActionActivity.queryCompleted;
 
 public final class QueryLoggerMiddleware implements QueryMiddleware {
   private final ActivityFeed feed;

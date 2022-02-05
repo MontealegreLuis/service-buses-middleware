@@ -1,16 +1,15 @@
 package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.logger;
 
+import static com.montealegreluis.servicebusesmiddleware.ActionActivity.commandCompleted;
+
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.commandbus.Command;
 import com.montealegreluis.servicebuses.commandbus.CommandHandler;
 import com.montealegreluis.servicebusesmiddleware.commandbus.middleware.CommandMiddleware;
-
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
-
-import static com.montealegreluis.servicebusesmiddleware.ActionActivity.commandCompleted;
 
 public final class CommandLoggerMiddleware implements CommandMiddleware {
   private final ActivityFeed feed;

@@ -1,5 +1,8 @@
 package com.montealegreluis.servicebusesmiddleware.querybus.middleware.error;
 
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.queryFailure;
+
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.activityfeed.ContextSerializer;
 import com.montealegreluis.servicebuses.Action;
@@ -10,9 +13,6 @@ import com.montealegreluis.servicebuses.querybus.QueryHandler;
 import com.montealegreluis.servicebuses.querybus.Response;
 import com.montealegreluis.servicebusesmiddleware.querybus.middleware.QueryMiddleware;
 import io.vavr.control.Try;
-
-import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
-import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.queryFailure;
 
 public final class QueryErrorHandlerMiddleware implements QueryMiddleware {
   private final ActivityFeed feed;

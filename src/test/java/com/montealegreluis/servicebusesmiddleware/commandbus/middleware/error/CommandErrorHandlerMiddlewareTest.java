@@ -1,5 +1,12 @@
 package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.error;
 
+import static com.montealegreluis.servicebuses.ActionErrorActivity.commandFailure;
+import static com.montealegreluis.servicebuses.ActionErrorActivity.domainException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.montealegreluis.activityfeed.ActivityFeed;
 import com.montealegreluis.activityfeed.ContextSerializer;
@@ -10,13 +17,6 @@ import com.montealegreluis.servicebuses.commandbus.CommandHandler;
 import com.montealegreluis.servicebuses.fakes.commandbus.FakeCommand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static com.montealegreluis.servicebuses.ActionErrorActivity.commandFailure;
-import static com.montealegreluis.servicebuses.ActionErrorActivity.domainException;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
 
 final class CommandErrorHandlerMiddlewareTest {
   @Test

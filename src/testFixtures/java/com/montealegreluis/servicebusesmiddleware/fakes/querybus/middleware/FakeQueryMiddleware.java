@@ -1,6 +1,5 @@
 package com.montealegreluis.servicebusesmiddleware.fakes.querybus.middleware;
 
-import com.montealegreluis.servicebuses.ActionException;
 import com.montealegreluis.servicebuses.fakes.querybus.FakeResponse;
 import com.montealegreluis.servicebuses.querybus.Query;
 import com.montealegreluis.servicebuses.querybus.QueryHandler;
