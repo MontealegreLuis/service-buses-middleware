@@ -15,6 +15,10 @@ public final class ActionActivity {
     return actionCompleted(command, duration, "command");
   }
 
+  public static Activity queryCompleted(Action query, Duration duration) {
+    return actionCompleted(query, duration, "query");
+  }
+
   private static Activity actionCompleted(Action action, Duration duration, String identifier) {
     long durationInMilliseconds = duration.toMillis();
     String message =

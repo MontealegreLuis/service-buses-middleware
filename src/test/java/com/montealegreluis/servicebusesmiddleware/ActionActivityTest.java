@@ -30,4 +30,21 @@ final class ActionActivityTest {
     assertContextValueEquals("update-credit-card-information", "command", context);
     assertContextValueEquals(500L, "durationInMilliseconds", context);
   }
+
+  @Test
+  void it_records_the_duration_of_a_query() {
+    var action = Action.withoutSuffix("SearchProductsAction", "Action");
+    var duration = Duration.ofMillis(500);
+
+    var activity = com.montealegreluis.servicebuses.ActionActivity.queryCompleted(action, duration);
+
+    assertEquals("Search products has been completed in 500 milliseconds", activity.message());
+    assertEquals(Level.INFO, activity.level());
+    @SuppressWarnings("unchecked")
+    Map<String, Object> context = (Map<String, Object>) (activity.context().get("context"));
+    assertContextSize(3, context);
+    assertContextValueEquals("query", "identifier", context);
+    assertContextValueEquals("search-products", "query", context);
+    assertContextValueEquals(500L, "durationInMilliseconds", context);
+  }
 }
