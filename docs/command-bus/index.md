@@ -1,6 +1,6 @@
 # Command Bus Middleware
 
-At a minimum, you need to add the `CommandHandlerMiddleware` to your Command Bus, in order to locate, create and execute a command handler.
+At a minimum, you need to add the `CommandHandlerMiddleware` to your Command Bus in order to locate, create, and execute a command handler.
 
 ```java
 public final class Application {
@@ -16,8 +16,8 @@ public final class Application {
 Middleware is a very useful concept for lots of things.
 You could write middleware for:
 
-- [Logging](https://github.com/MontealegreLuis/service-buses/blob/main/docs/command-bus-middleware/logging.md)
-- [Error handling](https://github.com/MontealegreLuis/service-buses/blob/main/docs/command-bus-middleware/error-handler.md)
+- [Logging](https://github.com/MontealegreLuis/service-buses-middleware/blob/main/docs/command-bus/logging.md)
+- [Error handling](https://github.com/MontealegreLuis/service-buses-middleware/blob/main/docs/command-bus/error-handler.md)
 - [Database transactions](https://github.com/MontealegreLuis/service-buses-spring-boot#transaction-middleware)
 - Queuing
 - Validation

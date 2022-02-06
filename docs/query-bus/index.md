@@ -1,6 +1,6 @@
 # Query Bus Middleware
 
-At a minimum you need to add the `QueryHandlerMiddleware` to your Query Bus, in order to locate, create and execute a query handler.
+At a minimum you need to add the `QueryHandlerMiddleware` to your Query Bus in order to locate, create, and execute a query handler.
 
 ```java
 public final class Application {

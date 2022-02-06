@@ -1,4 +1,4 @@
-# Service buses Middleware
+# Service Buses Middleware
 
 [![CI workflow](https://github.com/montealegreluis/service-buses-middleware/actions/workflows/ci.yml/badge.svg)](https://github.com/montealegreluis/service-buses-middleware/actions/workflows/ci.yml)
 [![Release workflow](https://github.com/montealegreluis/service-buses-middleware/actions/workflows/release.yml/badge.svg)](https://github.com/montealegreluis/service-buses-middleware/actions/workflows/release.yml)
