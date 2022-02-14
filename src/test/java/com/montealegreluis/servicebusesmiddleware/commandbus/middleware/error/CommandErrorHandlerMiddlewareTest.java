@@ -1,7 +1,7 @@
 package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.error;
 
-import static com.montealegreluis.servicebuses.ActionErrorActivity.commandFailure;
-import static com.montealegreluis.servicebuses.ActionErrorActivity.domainException;
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.commandFailure;
+import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
