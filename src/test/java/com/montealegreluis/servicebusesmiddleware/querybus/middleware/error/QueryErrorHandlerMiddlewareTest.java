@@ -2,8 +2,7 @@ package com.montealegreluis.servicebusesmiddleware.querybus.middleware.error;
 
 import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
 import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.queryFailure;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,6 +37,8 @@ final class QueryErrorHandlerMiddlewareTest {
         assertThrows(DomainException.class, () -> middleware.execute(input, next));
 
     assertEquals("Action cannot be completed", rethrownException.getMessage());
+    assertTrue(rethrownException.action().isPresent());
+    assertEquals(input.action(), rethrownException.action().get());
     verify(feed, times(1)).record(activity);
   }
 
@@ -58,6 +59,8 @@ final class QueryErrorHandlerMiddlewareTest {
 
     assertEquals(
         "Cannot complete fake query. Action cannot be completed", rethrownException.getMessage());
+    assertTrue(rethrownException.action().isPresent());
+    assertEquals(input.action(), rethrownException.action().get());
     verify(feed, times(1)).record(activity);
   }
 

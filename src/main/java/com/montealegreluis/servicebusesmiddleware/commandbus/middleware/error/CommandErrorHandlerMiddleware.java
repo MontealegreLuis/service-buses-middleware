@@ -38,8 +38,11 @@ public final class CommandErrorHandlerMiddleware implements CommandMiddleware {
   }
 
   private ActionException rethrowException(Action action, Throwable cause) {
-    return cause instanceof DomainException
-        ? (DomainException) cause
-        : new CommandFailure(action, cause);
+    if (cause instanceof DomainException) {
+      ((DomainException) cause).setAction(action);
+      return (DomainException) cause;
+    }
+
+    return new CommandFailure(action, cause);
   }
 }

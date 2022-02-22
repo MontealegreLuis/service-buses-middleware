@@ -4,11 +4,8 @@ import com.montealegreluis.servicebuses.Action;
 import com.montealegreluis.servicebuses.ActionException;
 
 final class CommandFailure extends ActionException {
-  private final Action action;
-
   public CommandFailure(Action action, Throwable cause) {
-    super("Cannot complete " + action.toWords() + ". " + cause.getMessage(), cause);
-    this.action = action;
+    super("Cannot complete " + action.toWords() + ". " + cause.getMessage(), action, cause);
   }
 
   @Override

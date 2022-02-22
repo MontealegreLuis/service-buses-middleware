@@ -2,8 +2,7 @@ package com.montealegreluis.servicebusesmiddleware.commandbus.middleware.error;
 
 import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.commandFailure;
 import static com.montealegreluis.servicebusesmiddleware.ActionErrorActivity.domainException;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -37,6 +36,8 @@ final class CommandErrorHandlerMiddlewareTest {
         assertThrows(DomainException.class, () -> middleware.execute(input, next));
 
     assertEquals("Action cannot be completed", rethrownException.getMessage());
+    assertTrue(rethrownException.action().isPresent());
+    assertEquals(input.action(), rethrownException.action().get());
     verify(feed, times(1)).record(activity);
   }
 
@@ -58,6 +59,8 @@ final class CommandErrorHandlerMiddlewareTest {
 
     assertEquals(
         "Cannot complete fake command. Action cannot be completed", rethrownException.getMessage());
+    assertTrue(rethrownException.action().isPresent());
+    assertEquals(input.action(), rethrownException.action().get());
     verify(feed, times(1)).record(activity);
   }
 

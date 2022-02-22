@@ -39,8 +39,10 @@ public final class QueryErrorHandlerMiddleware implements QueryMiddleware {
   }
 
   private ActionException rethrowException(Action action, Throwable cause) {
-    return cause instanceof DomainException
-        ? (DomainException) cause
-        : new QueryFailure(action, cause);
+    if (cause instanceof DomainException) {
+      ((DomainException) cause).setAction(action);
+      return (DomainException) cause;
+    }
+    return new QueryFailure(action, cause);
   }
 }
