@@ -24,6 +24,7 @@ public final class ActionErrorActivity {
         identifier,
         message,
         (context) -> {
+          context.put("action", action.toSlug());
           context.put("exception", contextFrom(exception));
           context.put("input", serializer.toContextMap(input));
         });
@@ -49,6 +50,7 @@ public final class ActionErrorActivity {
         identifier,
         message,
         (context) -> {
+          context.put("action", action.toSlug());
           context.put("exception", contextFrom(exception));
           context.put("input", serializer.toContextMap(input));
         });

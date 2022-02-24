@@ -57,8 +57,7 @@ final class QueryErrorHandlerMiddlewareTest {
 
     var rethrownException = assertThrows(QueryFailure.class, () -> middleware.execute(input, next));
 
-    assertEquals(
-        "Cannot complete fake query. Action cannot be completed", rethrownException.getMessage());
+    assertEquals("Action cannot be completed", rethrownException.getMessage());
     assertTrue(rethrownException.action().isPresent());
     assertEquals(input.action(), rethrownException.action().get());
     verify(feed, times(1)).record(activity);

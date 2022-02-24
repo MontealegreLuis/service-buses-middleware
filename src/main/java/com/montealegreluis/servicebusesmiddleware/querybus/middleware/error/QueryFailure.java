@@ -5,7 +5,7 @@ import com.montealegreluis.servicebuses.ActionException;
 
 final class QueryFailure extends ActionException {
   public QueryFailure(Action action, Throwable cause) {
-    super("Cannot complete " + action.toWords() + ". " + cause.getMessage(), action, cause);
+    super(cause.getMessage() == null ? "No message provided" : cause.getMessage(), action, cause);
   }
 
   @Override

@@ -5,7 +5,7 @@ import com.montealegreluis.servicebuses.ActionException;
 
 final class CommandFailure extends ActionException {
   public CommandFailure(Action action, Throwable cause) {
-    super("Cannot complete " + action.toWords() + ". " + cause.getMessage(), action, cause);
+    super(cause.getMessage() == null ? "No message provided" : cause.getMessage(), action, cause);
   }
 
   @Override

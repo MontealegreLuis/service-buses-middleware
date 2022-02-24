@@ -57,8 +57,7 @@ final class CommandErrorHandlerMiddlewareTest {
     var rethrownException =
         assertThrows(CommandFailure.class, () -> middleware.execute(input, next));
 
-    assertEquals(
-        "Cannot complete fake command. Action cannot be completed", rethrownException.getMessage());
+    assertEquals("Action cannot be completed", rethrownException.getMessage());
     assertTrue(rethrownException.action().isPresent());
     assertEquals(input.action(), rethrownException.action().get());
     verify(feed, times(1)).record(activity);

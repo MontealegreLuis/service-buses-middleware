@@ -65,6 +65,18 @@ fields @timestamp, message, `context.exception`, `context.input`
 | limit 50
 ```
 
+### Querying all exceptions produced by the same action
+
+Error log events include the action that produced them.
+Following the example of the `ProcessPayment` command, the query below would return all error events produced by that action.
+
+```sql
+fields @timestamp, message, `context.exception`, `context.input`
+| filter `context.action` = "process-payment"
+| sort @timestamp desc
+| limit 50
+```
+
 ### How exceptions are handled
 
 - Child classes of `DomainException` are re-thrown.
