@@ -56,7 +56,7 @@ publishing {
 
 dependencies {
     implementation "io.vavr:vavr:0.10.4"
-    implementation 'com.montealegreluis:assert:1.5.0'
+    implementation "com.montealegreluis:assert:${assertVersion}"
     api "com.montealegreluis:activity-feed:${activityFeedVersion}"
     api "com.montealegreluis:service-buses:${serviceBusesVersion}"
 
