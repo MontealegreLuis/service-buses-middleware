@@ -10,13 +10,12 @@ import java.time.Clock;
 public final class Application {
   public static void main(String[] args) {
     // ...
-    var logger = LoggerFactory.getLogger(Application.class);
+    var collector = new DomainEventsCollector();
     var feed = new ActivityFeed(logger);
-    var clock = Clock.systemUTC();
     var mapper = new ObjectMapper();
     var serializer = new ContextSerializer(mapper);
     var loggerMiddleware = new EventsLoggerMiddleware(
-        feed, clock, serializer);
+        collector, feed, serializer);
 
     var bus = new MiddlewareCommandBus(List.of(
         loggerMiddleware,
