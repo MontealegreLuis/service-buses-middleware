@@ -16,7 +16,9 @@ public final class Application {
 Middleware is a very useful concept for lots of things.
 You could write middleware for:
 
-- [Logging](https://github.com/MontealegreLuis/service-buses-middleware/blob/main/docs/command-bus/logging.md)
+- Logging
+  - [Commands](https://github.com/MontealegreLuis/service-buses-middleware/blob/main/docs/command-bus/logging-commands.md)
+  - [Domain events](https://github.com/MontealegreLuis/service-buses-middleware/blob/main/docs/command-bus/logging-events.md)
 - [Error handling](https://github.com/MontealegreLuis/service-buses-middleware/blob/main/docs/command-bus/error-handler.md)
 - [Database transactions](https://github.com/MontealegreLuis/service-buses-spring-boot#transaction-middleware)
 - Queuing
